@@ -1,5 +1,5 @@
 import React from 'react'
-import Fooder from './compounent/fooder'
+import Fooder from './compounent/Fooder'
 import Detail from './compounent/Detail'
 import Cantact_Us from './compounent/Cantact_Us'
 import My_Skill from './compounent/My_Skill'
@@ -7,7 +7,7 @@ import My_Skill from './compounent/My_Skill'
 const App = () => {
   return (
     <div>
-      
+
       <Fooder></Fooder>
       <Detail></Detail>
       <My_Skill></My_Skill>
