@@ -28,8 +28,8 @@ const Detail = () => {
               <p><strong>Address:</strong> Karachi, Pakistan</p>
             </div>
             <div>
-              <p><strong>Email:</strong> Adc@gmail.com</p>
-              <p><strong>Phone:</strong> +921233455</p>
+              <p><strong>Email:</strong> muhammadarizsalman@gmail.com</p>
+              <p><strong>Phone:</strong> +923113811042</p>
               <p><strong>GitHub:</strong> /arizsalman</p>
               <p><strong>Freelance:</strong> Available</p>
             </div>
