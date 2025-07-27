@@ -7,7 +7,7 @@ const Detail = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Text */}
         <div>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-800">
+          <h2 id="about" className="text-4xl sm:text-5xl font-bold mb-6 text-gray-800">
             👨‍💻 About Me
           </h2>
           <p className="text-xl text-gray-700 mb-6 font-semibold">
@@ -28,8 +28,8 @@ const Detail = () => {
               <p><strong>Address:</strong> Karachi, Pakistan</p>
             </div>
             <div>
-              <p><strong>Email:</strong> muhammadarizsalman@gmail.com</p>
-              <p><strong>Phone:</strong> +92 311 3811042</p>
+              <p><strong>Email:</strong> Adc@gmail.com</p>
+              <p><strong>Phone:</strong> +921233455</p>
               <p><strong>GitHub:</strong> /arizsalman</p>
               <p><strong>Freelance:</strong> Available</p>
             </div>

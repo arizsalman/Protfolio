@@ -23,7 +23,7 @@ const Cantact_Us = () => {
     <div className="bg-gray-50 py-20 px-6 sm:px-10 lg:px-20 font-sans">
       <div className="max-w-5xl mx-auto text-center">
         {/* 🎯 Stylish Heading */}
-        <h2 className="text-5xl font-extrabold text-orange-500 mb-4 tracking-tight leading-tight drop-shadow-sm">
+        <h2 id='skills' className="text-5xl font-extrabold text-orange-500 mb-4 tracking-tight leading-tight drop-shadow-sm">
             My Services
         </h2>
         <p className="text-lg text-gray-600 mb-12 font-medium">
