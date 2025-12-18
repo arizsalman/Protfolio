@@ -1,9 +1,17 @@
 import React from 'react';
+import { useSpring, animated } from '@react-spring/web';
 import heroImg from '../image/Ariz.JPG';
 
 const Fooder = () => {
+  // Animation for the whole Fooder component
+  const fadeIn = useSpring({
+    from: { opacity: 0, transform: 'translateY(40px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
+    config: { tension: 150, friction: 20 },
+  });
+
   return (
-    <div className="bg-white font-sans">
+    <animated.div style={fadeIn} className="bg-white font-sans">
       {/* Header */}
       <header className="flex justify-between items-center px-6 py-4 shadow-md bg-white sticky top-0 z-50">
         <h1 className="text-xl font-bold text-gray-800">Muhammad Ariz</h1>
@@ -54,10 +62,8 @@ const Fooder = () => {
           </div>
         </div>
       </section>
-    </div>
+    </animated.div>
   );
 };
 
 export default Fooder;
-
-

@@ -1,13 +1,101 @@
-import React from 'react';
+// import React from 'react';
+// import Ariz from '../image/Ariz.JPG';
+
+// const Detail = () => {
+//   return (
+//     <div className="bg-white text-gray-900 py-16 px-6 sm:px-10 lg:px-20">
+//       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+//         {/* Left Side - Text */}
+//         <div>
+//           <h2 id="about" className="text-4xl sm:text-5xl font-bold mb-6 text-gray-800">
+//             👨‍💻 About Me
+//           </h2>
+//           <p className="text-xl text-gray-700 mb-6 font-semibold">
+//             Senior Mobile & Web App Developer
+//           </p>
+//           <p className="text-gray-600 mb-6 leading-relaxed">
+//             I specialize in creating high-quality Mobile and Web Apps for clients worldwide.
+//             From social media apps and quiz platforms to educational tools and custom solutions,
+//             I bring your ideas to life with clean code and user-focused design.
+//           </p>
+
+//           {/* Details */}
+//           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
+//             <div>
+//               <p><strong>Birthday:</strong> 24-Oct-2002</p>
+//               <p><strong>Age:</strong> 24 Yr</p>
+//               <p><strong>Residence:</strong> Pakistan</p>
+//               <p><strong>Address:</strong> Karachi, Pakistan</p>
+//             </div>
+//             <div>
+//               <p><strong>Email:</strong> muhammadarizsalman@gmail.com</p>
+//               <p><strong>Phone:</strong> +923113811042</p>
+//               <p><strong>GitHub:</strong> /arizsalman</p>
+//               <p><strong>Freelance:</strong> Available</p>
+//             </div>
+//           </div>
+
+//           {/* Download CV */}
+//           <div className="mt-6">
+//             <a
+//               href="/Muhammad_Ariz_Salman_Resume.pdf"
+//               download
+//               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition"
+//             >
+//               📄 Download CV
+//             </a>
+//           </div>
+//         </div>
+
+//         {/* Right Side - Image */}
+//         <div className="flex justify-center lg:justify-end">
+//           <img
+//             src={Ariz}
+//             alt="Ariz Salman"
+//             className="rounded-2xl w-full max-w-sm h-auto object-cover shadow-lg border border-gray-200"
+//           />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Detail;
+
+
+
+//
+import React from "react";
+import { useSpring, animated } from "@react-spring/web";
 import Ariz from '../image/Ariz.JPG';
 
 const Detail = () => {
+  // Animate left text (fade + slide up)
+  const textSpring = useSpring({
+    from: { opacity: 0, transform: "translateY(25px)" },
+    to: { opacity: 1, transform: "translateY(0)" },
+    config: { tension: 180, friction: 20 },
+    delay: 250,
+  });
+
+  // Animate right image (fade + slide up)
+  const imageSpring = useSpring({
+    from: { opacity: 0, transform: "translateY(25px)" },
+    to: { opacity: 1, transform: "translateY(0)" },
+    config: { tension: 180, friction: 20 },
+    delay: 600,
+  });
+
   return (
-    <div className="bg-white text-gray-900 py-16 px-6 sm:px-10 lg:px-20">
+    <div className="bg-white text-gray-900 py-16 px-6 sm:px-10 lg:px-20 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left Side - Text */}
-        <div>
-          <h2 id="about" className="text-4xl sm:text-5xl font-bold mb-6 text-gray-800">
+
+        {/* Left Text with animation */}
+        <animated.div style={textSpring}>
+          <h2
+            id="about"
+            className="text-4xl sm:text-5xl font-bold mb-6 text-gray-800"
+          >
             👨‍💻 About Me
           </h2>
           <p className="text-xl text-gray-700 mb-6 font-semibold">
@@ -19,7 +107,6 @@ const Detail = () => {
             I bring your ideas to life with clean code and user-focused design.
           </p>
 
-          {/* Details */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
             <div>
               <p><strong>Birthday:</strong> 24-Oct-2002</p>
@@ -35,7 +122,6 @@ const Detail = () => {
             </div>
           </div>
 
-          {/* Download CV */}
           <div className="mt-6">
             <a
               href="/Muhammad_Ariz_Salman_Resume.pdf"
@@ -45,16 +131,18 @@ const Detail = () => {
               📄 Download CV
             </a>
           </div>
-        </div>
+        </animated.div>
 
-        {/* Right Side - Image */}
-        <div className="flex justify-center lg:justify-end">
+        {/* Right Image with animation and hover scale */}
+        <animated.div style={imageSpring} className="flex justify-center lg:justify-end">
           <img
             src={Ariz}
             alt="Ariz Salman"
-            className="rounded-2xl w-full max-w-sm h-auto object-cover shadow-lg border border-gray-200"
+            className="rounded-2xl w-full max-w-sm h-auto object-cover shadow-lg border border-gray-200
+                       transition-transform duration-300 ease-in-out
+                       hover:scale-105"
           />
-        </div>
+        </animated.div>
       </div>
     </div>
   );
